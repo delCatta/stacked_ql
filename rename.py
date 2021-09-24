@@ -87,9 +87,9 @@ def changeOtherImports(projectPath,oldOtherPackage,newOtherPackage):
     findReplace(newapppath, f"package:{oldOtherPackage}", f"package:{newOtherPackage}", "*.dart")
 
 
+findReplace(newapppath, "stackedql_ui", newName+"_ui", "*.dart")
 renameProject(oldappProjectName,appProjectName,newapppath,True)
 changeOtherImports(newapppath,oldferryProjectName,ferryProjectName)
-findReplace(newapppath, "stackedql_ui", newName+"_ui", "*.dart")
 pubGetAndBuild(oldappProjectName,appProjectName,newapppath)
 
 
