@@ -25,21 +25,21 @@ class ProfileSetupViewModel extends FormViewModel {
     FocusScope.of(context).unfocus();
     setBusy(true);
     if (!validateFields()) return;
-    GUpdateUserMutationReq query = GUpdateUserMutationReq(
-      (b) {
-        b.vars.updateUserInput.id = user.id;
-        b.vars.updateUserInput.attributes.setup = nameValue != null &&
-            lastNameValue != null &&
-            phoneValue != null &&
-            countryValue != null;
-        b.vars.updateUserInput.attributes.name = nameValue;
-        b.vars.updateUserInput.attributes.lastName = lastNameValue;
-        b.vars.updateUserInput.attributes.phone = phoneValue;
-        b.vars.updateUserInput.attributes.country = countryValue;
-        return b;
-      },
-    );
-    MentClient.client.request(query).listen(handleUserUpdate);
+    // GUpdateUserMutationReq query = GUpdateUserMutationReq(
+    //   (b) {
+    //     b.vars.updateUserInput.id = user.id;
+    //     b.vars.updateUserInput.attributes.setup = nameValue != null &&
+    //         lastNameValue != null &&
+    //         phoneValue != null &&
+    //         countryValue != null;
+    //     b.vars.updateUserInput.attributes.name = nameValue;
+    //     b.vars.updateUserInput.attributes.lastName = lastNameValue;
+    //     b.vars.updateUserInput.attributes.phone = phoneValue;
+    //     b.vars.updateUserInput.attributes.country = countryValue;
+    //     return b;
+    //   },
+    // );
+    // FerryClient.client.request(query).listen(handleUserUpdate);
   }
 
   bool validateFields() {
@@ -64,33 +64,33 @@ class ProfileSetupViewModel extends FormViewModel {
     notifyListeners();
   }
 
-  void handleUserUpdate(
-      OperationResponse<GUpdateUserMutationData, GUpdateUserMutationVars>
-          response) {
-    if (response.hasErrors) return handleUpdateError(response: response);
+  // void handleUserUpdate(
+  //     OperationResponse<GUpdateUserMutationData, GUpdateUserMutationVars>
+  //         response) {
+  //   if (response.hasErrors) return handleUpdateError(response: response);
 
-    try {
-      User responseUser =
-          User.fromJson(response.data!.updateUser!.user!.toJson());
-      UserService.service.updateCurrentUser(responseUser);
-      // ? Display Success Message
-      navigationService.clearStackAndShow(Routes.startUpView);
-    } catch (e) {
-      handleUpdateError();
-    }
-    Future.delayed(Duration(seconds: 5), () {
-      setBusy(false);
-    });
-  }
+  //   try {
+  //     User responseUser =
+  //         User.fromJson(response.data!.updateUser!.user!.toJson());
+  //     UserService.service.updateCurrentUser(responseUser);
+  //     // ? Display Success Message
+  //     navigationService.clearStackAndShow(Routes.startUpView);
+  //   } catch (e) {
+  //     handleUpdateError();
+  //   }
+  //   Future.delayed(Duration(seconds: 5), () {
+  //     setBusy(false);
+  //   });
+  // }
 
-  void handleUpdateError(
-      {OperationResponse<GUpdateUserMutationData, GUpdateUserMutationVars>?
-          response}) {
-    if (response != null) {
-      log.e(response.graphqlErrors);
-      setValidationMessage(response.graphqlErrors.toString());
-    }
-    navigationService.navigateTo(Routes.initialView);
-    setBusy(false);
-  }
+  // void handleUpdateError(
+  //     {OperationResponse<GUpdateUserMutationData, GUpdateUserMutationVars>?
+  //         response}) {
+  //   if (response != null) {
+  //     log.e(response.graphqlErrors);
+  //     setValidationMessage(response.graphqlErrors.toString());
+  //   }
+  //   navigationService.navigateTo(Routes.initialView);
+  //   setBusy(false);
+  // }
 }

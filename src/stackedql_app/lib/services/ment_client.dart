@@ -7,15 +7,15 @@ import 'package:stackedql_app/main.dart';
 import 'package:stackedql_app/services/auth.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class MentClient {
-  static final log = getLogger("MentClient");
+class FerryClient {
+  static final log = getLogger("FerryClient");
   static String url = API + "/graphql";
   Client _client;
-  MentClient(this._client);
+  FerryClient(this._client);
 
-  static Future<MentClient> initialize() async {
+  static Future<FerryClient> initialize() async {
     final navigationService = locator<NavigationService>();
-    return MentClient(await initClient(url,
+    return FerryClient(await initClient(url,
         defaultHeaders: {"Content-Type": "application/json"},
         updateToken: () => updateToken(),
         tokenExpired: () => Auth.service.tokenExpired(),
@@ -32,6 +32,6 @@ class MentClient {
     return token;
   }
 
-  static MentClient get service => locator<MentClient>();
-  static Client get client => locator<MentClient>()._client;
+  static FerryClient get service => locator<FerryClient>();
+  static Client get client => locator<FerryClient>()._client;
 }

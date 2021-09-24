@@ -24,7 +24,7 @@ import 'package:stacked_services/stacked_services.dart';
   LazySingleton(classType: NavigationService),
   LazySingleton(classType: HTTP),
   LazySingleton(classType: Auth),
-  Presolve(classType: MentClient, presolveUsing: MentClient.initialize),
+  Presolve(classType: FerryClient, presolveUsing: FerryClient.initialize),
   LazySingleton(classType: UserService),
 ], logger: StackedLogger())
 class AppSetup {}

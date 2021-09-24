@@ -28,8 +28,8 @@ Future setupLocator(
   locator.registerLazySingleton(() => NavigationService());
   locator.registerLazySingleton(() => HTTP());
   locator.registerLazySingleton(() => Auth());
-  final mentClient = await MentClient.initialize();
-  locator.registerSingleton(mentClient);
+  final FerryClient = await FerryClient.initialize();
+  locator.registerSingleton(FerryClient);
 
   locator.registerLazySingleton(() => UserService());
 }

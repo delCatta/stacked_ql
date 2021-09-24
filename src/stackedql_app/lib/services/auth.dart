@@ -137,7 +137,7 @@ class Auth with ChangeNotifier {
     final createUserReq = GCreateUserMutationReq((b) => b
       ..vars.createUserInput.attributes.email = "a@a.a"
       ..vars.createUserInput.attributes.password = "123456");
-    // MentClient.client.request(createUserReq).listen((event) {
+    // FerryClient.client.request(createUserReq).listen((event) {
     //   log.wtf(event.data);
     // });
     return Response(

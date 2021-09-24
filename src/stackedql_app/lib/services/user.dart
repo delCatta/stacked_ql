@@ -13,7 +13,7 @@ import 'package:stacked_services/stacked_services.dart';
 class UserService extends BaseViewModel {
   final log = getLogger("UserService");
   final navigationService = locator<NavigationService>();
-  static Client client = MentClient.client;
+  static Client client = FerryClient.client;
   User? _currentUser;
 
   Future<void> updateCurrentUser(User user) async {
