@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ment_ui/ment_ui.dart';
+import 'package:stackedql_ui/stackedql_ui.dart';
 
 import 'package:stackedql_app/ui/views/initial/initial_view.dart';
 import 'package:stackedql_app/ui/views/startup/startup_view_model.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:stackedql_app/ui/ui_helpers.dart';
-import 'package:ment_ui/ment_ui.dart';
+import 'package:stackedql_ui/stackedql_ui.dart';
 
 class AuthenticationLayout extends StatelessWidget {
   final String title;

@@ -89,6 +89,7 @@ def changeOtherImports(projectPath,oldOtherPackage,newOtherPackage):
 
 renameProject(oldappProjectName,appProjectName,newapppath,True)
 changeOtherImports(newapppath,oldferryProjectName,ferryProjectName)
+changeOtherImports(newapppath,"stackedql_ui",newName+"_ui")
 pubGetAndBuild(oldappProjectName,appProjectName,newapppath)
 
 
@@ -96,7 +97,7 @@ pubGetAndBuild(oldappProjectName,appProjectName,newapppath)
 # remember to copy queries and mutations
 
 # delete .git - readme - python script option
-if input("Delete repo files? (y/n):")=="y":
-    os.rmdir(".git")
-    os.remove("README.md")
-    os.remove("rename.py")
+# if input("Delete repo files? (y/n):")=="y":
+#     os.rmdir(".git")
+#     os.remove("README.md")
+#     os.remove("rename.py")
