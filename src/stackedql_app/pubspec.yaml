@@ -1,0 +1,47 @@
+name: stackedql_app
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  dio: ^4.0.0
+  ferry: ^0.10.4
+  ferry_flutter: ^0.5.4
+  flutter:
+    sdk: flutter
+  flutter_secure_storage: ^4.2.1
+  freezed_annotation: ^0.14.3
+  gql_http_link: ^0.4.0
+  json_annotation: ^4.1.0
+  logger: ^1.1.0
+  stackedql_ferry:
+    path: ../stackedql_ferry
+  stackedql_ui:
+    path: ../stackedql_ui
+  stacked: ^2.2.5
+  stacked_services: ^0.8.13
+
+dev_dependencies:
+  auto_route_generator: ^2.4.0
+  build_runner: ^2.1.2
+  ferry_generator: ^0.4.4
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^0.14.5
+  json_serializable: ^5.0.2
+  stacked_generator: ^0.5.2
+
+dependency_overrides:
+  analyzer: ^2.3.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
