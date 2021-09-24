@@ -19,7 +19,7 @@ class StartUpViewModel extends BaseViewModel {
 
   Future<void> runInitialLogic() async {
     // final query = GInitialCurrentUserQueryReq();
-    if (!(await Auth.service.isAuth)) return handleNoUser();
+    // if (!(await Auth.service.isAuth)) return handleNoUser();
     // FerryClient.client.request(query).listen(initialQueryResponse);
   }
 
@@ -51,13 +51,13 @@ class StartUpViewModel extends BaseViewModel {
   //   navigationService.clearStackAndShow(Routes.initialView);
   // }
 
-  // void handleUserSetup(User user) {
-  //   if (user.setup!) {
-  //     log.i("Navigating to Home View.");
-  //     navigationService.navigateTo(Routes.homeView);
-  //   } else {
-  //     log.i("Navigating to Setup View.");
-  //     navigationService.navigateTo(Routes.profileSetupView);
-  //   }
-  // }
+  void handleUserSetup(User user) {
+    if (user.setup!) {
+      log.i("Navigating to Home View.");
+      navigationService.navigateTo(Routes.homeView);
+    } else {
+      log.i("Navigating to Setup View.");
+      navigationService.navigateTo(Routes.profileSetupView);
+    }
+  }
 }
