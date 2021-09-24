@@ -12,3 +12,7 @@ flutter pub global activate rename
 python3 rename.js
 
 ```
+
+### Usage
+
+Open Ferry project and add GraphQL Schema and Queries!
